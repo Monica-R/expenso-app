@@ -5,6 +5,7 @@
   --yellow-light: #ffffaa;
   --white: #fdfdfd;
   --grey: #A3A3A3;
+  --light-grey: #e6e6e6;
 }
 
 * {
@@ -14,5 +15,9 @@
 }
 
 body {
-  background: var(--navy-color);
+  background: var(--light-grey);
+  font-family: "Inter Tight", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  padding: 1rem;
 }

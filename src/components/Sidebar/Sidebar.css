@@ -1,0 +1,32 @@
+.aside {
+    width: 20%;
+    min-height: 50vh;
+    background-color: var(--white);
+    margin-top: 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    padding-top: 1rem;
+}
+
+.aside__ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0 1.4rem;
+    margin-top: 2rem;
+    li {
+        width: 80%;
+        height: calc(2rem + 1vh);
+        margin-bottom: .8rem;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.aside__link {
+    text-decoration: none;
+    font-size: calc(1rem + .3vw);
+    font-weight: 500;
+}

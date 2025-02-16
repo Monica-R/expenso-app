@@ -14,10 +14,12 @@ function App() {
   return (
     <>
       <Header />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={ <Home /> } />
-      </Routes>
+      <main className="main">
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+        </Routes>
+      </main>
       <Footer />
     </>
   )
