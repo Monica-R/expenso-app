@@ -22,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/transactions" element={<Transactions />} />
+          <Route path="/add-transaction" element={<AddExpense />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

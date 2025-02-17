@@ -3,7 +3,7 @@ import './TrackerMiniCard.css'
 
 function TrackerMiniCard({info}) {
   return (
-    <div className='recent-item'>{info}</div>
+    <><div className='recent-item'>{info}</div></>
   )
 }
 

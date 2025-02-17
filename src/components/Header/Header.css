@@ -8,4 +8,17 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search {
+    width: 20%;
+    border-radius: 2rem;
+    padding: .5rem;
+    background-color: var(--light-grey);
+    font-size: calc(1.4rem + .2vw);
+    display: flex;
+    align-items: center;
 }

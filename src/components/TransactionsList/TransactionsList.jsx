@@ -3,8 +3,8 @@ import './TransactionsList.css'
 
 function TransactionsList() {
   return (
-    <div>
-      LISTA DE GASTOS
+    <div className="transactions">
+      <h2 className="transactions__h2">Transactions List</h2>
     </div>
   )
 }

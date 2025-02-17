@@ -1,8 +1,12 @@
 import React from 'react'
+import TransactionsList from '../components/TransactionsList/TransactionsList'
+
 
 function Transactions() {
   return (
-    <div>Transactions</div>
+    <>
+      <TransactionsList/>
+    </>
   )
 }
 

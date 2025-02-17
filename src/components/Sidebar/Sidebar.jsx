@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <aside className='aside'>
       <ul className='aside__ul'>
-        <li><Link className='aside__link' to="/">Add expense</Link></li>
+        <li><Link className='aside__link' to="/add-transaction">Add expense</Link></li>
         <li><Link className='aside__link' to="/transactions">All transactions</Link></li>
         <li><Link className='aside__link' to="/">Test 2</Link></li>
         <li><Link className='aside__link' to="/about">About</Link></li>
