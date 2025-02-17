@@ -1,0 +1,10 @@
+.footer {
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p a {
+        text-decoration: 1px dashed underline;
+        color: var(--color-one);
+    }
+}

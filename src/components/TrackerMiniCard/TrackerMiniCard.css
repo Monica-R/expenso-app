@@ -1,0 +1,5 @@
+.recent-item {
+    width: 80%;
+    font-size: calc(1.2rem - 1vw);
+    padding: 1rem;
+}

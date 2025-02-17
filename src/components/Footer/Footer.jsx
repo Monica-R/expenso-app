@@ -3,9 +3,9 @@ import './Footer.css'
 
 function Footer() {
   return (
-    <div>
-      PIE DE PÁGINA
-    </div>
+    <footer className='footer'>
+      <p>Github repository: <a href="https://github.com/Monica-R/expenso-app">Expenso</a></p>
+    </footer>
   )
 }
 

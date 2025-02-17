@@ -6,4 +6,39 @@
   width: 100%;
   height: 80vh;
   display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.content-graphics,
+.content-info {
+  height: 100%;
+  background-color: var(--white);
+  border-radius: 1rem;
+}
+
+.content-graphics {
+  width: 56%;
+}
+
+.content-info {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.credit-card {
+  width: 80%;
+  height: calc(16rem - 1vh);
+  background-color: brown;
+  border-radius: .5rem;
 }
