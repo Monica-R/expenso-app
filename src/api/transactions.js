@@ -22,6 +22,7 @@ export const getTransactionById = async (transactionId) => {
 export const updateTransaction = async (transactionId, amount, date, category, type, description) => {
     try {
         const requestBody = {
+            id: transactionId,
             date, 
             type, 
             amount, 

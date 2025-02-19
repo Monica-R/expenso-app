@@ -1,5 +1,5 @@
-import React, { use } from 'react'
-import { useEffect, useState } from 'react';
+import React from 'react'
+import { useState } from 'react';
 import './TransactionCard.css'
 import { Link } from 'react-router-dom';
 import { deleteTransaction } from '../../api/transactions';
