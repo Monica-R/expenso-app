@@ -10,11 +10,15 @@ import Transactions from './pages/Transactions';
 import About from './pages/About';
 import ErrorPage from './pages/ErrorPage';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={2000}
+      />
       <Header />
       <main className="main">
         <Sidebar />

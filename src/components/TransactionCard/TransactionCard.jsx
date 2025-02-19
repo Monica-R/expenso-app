@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
-import './TransactionCard.css'
 import { Link } from 'react-router-dom';
+import './TransactionCard.css'
 import { deleteTransaction } from '../../api/transactions';
 import Modal from '../Modal/Modal';
+import { toast } from 'react-toastify';
 
 function TransactionCard({transaction, fetchTransactions}) {
   const { id, date, amount } = transaction;
@@ -14,8 +15,10 @@ function TransactionCard({transaction, fetchTransactions}) {
     try {
       await deleteTransaction(id);
       fetchTransactions();
+      toast.success("Transaction successfully deleted.");
     } catch (error) {
       console.error('Houston, tenemos un problema.', error);
+      toast.error("Error deleting transaction.")
     } finally {
       setIsModalOpen(false);
     }

@@ -1,7 +1,13 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { addTransaction } from '../api/transactions';
+import Modal from '../components/Modal/Modal';
 function AddExpense() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   /* UNIQUE FORM STATE */ 
   const [ inputForm, setInputForm ] = useState({});
@@ -16,15 +22,28 @@ function AddExpense() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const transactionId = Date.now();
-    addTransaction(
-      transactionId,
-      inputForm.amount,
-      inputForm.date,
-      inputForm.category,
-      inputForm.type,
-      inputForm.description
-    );
+    setIsModalOpen(true);
+  }
+  
+  const onSubmit = async () => {
+    try {
+      const transactionId = Date.now();
+      addTransaction(
+        transactionId,
+        inputForm.amount,
+        inputForm.date,
+        inputForm.category,
+        inputForm.type,
+        inputForm.description
+      );
+      toast.success("Transaction added successfully.");
+      setTimeout(() => {
+        navigate("/transactions");
+      }, 1000);
+    } catch (error) {
+      console.error('Houston, we have a problem', error)
+      toast.error("We have a problem related to add transaction.")
+    }
   }
 
   return (
@@ -35,15 +54,16 @@ function AddExpense() {
           <input 
           type="number" 
           name="amount" 
-          id="amount" 
+          id="amount"
+          required
           placeholder="Amount"
           onChange={(e) => handleChange(e)}/>
         </label>
         <label htmlFor="date">
-          <input type="date" name="date" id="date" onChange={(e) => handleChange(e)}/>
+          <input type="date" name="date" id="date" required onChange={(e) => handleChange(e)}/>
         </label>
         <label htmlFor="category">
-          <select name="category" id="category" onChange={(e) => handleChange(e)}>
+          <select name="category" required id="category" onChange={(e) => handleChange(e)}>
             <option value="#">Select an option</option>
             <option value="Entertaiment">Entertaiment</option>
             <option value="Food">Food</option>
@@ -85,6 +105,12 @@ function AddExpense() {
         </label>
         <input type="submit" value="Send" />
       </form>
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h3>Are you sure you want to add this element?</h3>
+        <button onClick={onSubmit}>Confirm</button>
+        <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+      </Modal>
     </section>
   )
 }

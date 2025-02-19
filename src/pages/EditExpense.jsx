@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import { getTransactionById, updateTransaction } from '../api/transactions';
 import Modal from '../components/Modal/Modal';
 
@@ -22,6 +23,7 @@ function EditExpense() {
         setTransactionItem(data);
       } catch (error) {
         console.error('Houston, tenemos un problema.', error);
+        toast.error("Error editing transaction");
       }
     }
     fetchTransaction();
@@ -50,9 +52,13 @@ function EditExpense() {
         inputForm.type,
         inputForm.description
       );
-      navigate("/transactions");
+      toast.success("Transaction successfully edited.");
+      setTimeout(() => {
+        navigate("/transactions");
+      }, 2000);
     } catch (error) {
-      console.error('Houston, tenemos un problema', error);
+      console.error('Houston, we have a problem', error);
+      toast.error("We have a problem related to editing transaction.")
     } finally {
       setIsModalOpen(false);     
     }
@@ -119,9 +125,9 @@ function EditExpense() {
       </form>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h3>¿Estás seguro de que quieres guardar los cambios?</h3>
-        <button onClick={onUpdate}>Sí, guardar</button>
-        <button onClick={() => setIsModalOpen(false)}>Cancelar</button>
+        <h3>Are you sure you want to save the changes?</h3>
+        <button onClick={onUpdate}>Confirm</button>
+        <button onClick={() => setIsModalOpen(false)}>Cancel</button>
       </Modal>
     </section>
   )
