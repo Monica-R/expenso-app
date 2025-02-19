@@ -1,15 +1,19 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getTransactionById, updateTransaction } from '../api/transactions';
+import Modal from '../components/Modal/Modal';
 
 function EditExpense() {
 
   const { transactionId } = useParams();
   const [transactionItem, setTransactionItem] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   /* UNIQUE FORM STATE */ 
   const [ inputForm, setInputForm ] = useState({});
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTransaction = async () => {
@@ -33,14 +37,25 @@ function EditExpense() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    updateTransaction(
-      transactionId,
-      inputForm.amount,
-      inputForm.date,
-      inputForm.category,
-      inputForm.type,
-      inputForm.description
-    );
+    setIsModalOpen(true);
+  }
+
+  const onUpdate = async () => {
+    try {      
+      await updateTransaction(
+        transactionId,
+        inputForm.amount,
+        inputForm.date,
+        inputForm.category,
+        inputForm.type,
+        inputForm.description
+      );
+      navigate("/transactions");
+    } catch (error) {
+      console.error('Houston, tenemos un problema', error);
+    } finally {
+      setIsModalOpen(false);     
+    }
   }
 
   //console.log('objeto', transactionItem)
@@ -102,6 +117,12 @@ function EditExpense() {
         </label>
         <input type="submit" value="Send" />
       </form>
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h3>¿Estás seguro de que quieres guardar los cambios?</h3>
+        <button onClick={onUpdate}>Sí, guardar</button>
+        <button onClick={() => setIsModalOpen(false)}>Cancelar</button>
+      </Modal>
     </section>
   )
 }
