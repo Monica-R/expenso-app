@@ -8,21 +8,22 @@ function TransactionsList() {
 
   const [transactions, setTransactions] = useState([]);
 
-  useEffect(() => {
-    const fetchTransactions = async () => {
-      try {
-        const data = await getAllTransactions();
-        setTransactions(data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
+  const fetchTransactions = async () => {
+    try {
+      const data = await getAllTransactions();
+      setTransactions(data);
+    } catch (error) {
+      console.error("Error:", error);
     }
+  }
+
+  useEffect(() => {
     fetchTransactions();
   }, []);
 
   function mapTransactions () {
     return transactions.map((item, index) => {
-      return (<TransactionCard key={index} transaction={item} />);
+      return (<TransactionCard key={index} transaction={item} fetchTransactions={fetchTransactions} />);
     });
   }
 
