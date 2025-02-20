@@ -59,17 +59,28 @@ function Home() {
 
   return (
     <div className="content">
-      <section className="content-graphics">
-        <BarChartComponent data={incomeData} color="#11BB80"/>
-        <BarChartComponent data={expenseData} color="#EC2C55"/>
-        <RadialBarChartComponent data={getCategoriesAmount}/>
-      </section>
       <section className="content-info">
-        <div className="credit-card">{ balance } €</div>
+        <div className="credit-card">
+          <p>{ balance } <span className='type-monetary'>€</span></p>
+          <p className='credit-card__info'>
+            <span>Carmen Delia Aspato Cádiz</span>
+            <span>**** **** **** 5493</span>
+            <span>05/30</span>
+          </p>
+        </div>
         <h3 className='content-info__h3'>Activity</h3>
         <div className="recent-list">
           { mapRecentTransactions() }
         </div>
+      </section>
+      <section className="content-graphics">
+        <h2 className="content-graphics__h2">Stadistics</h2>
+        <p className="content-graphics__p">Your Incomes</p>
+        <BarChartComponent data={incomeData} color="#11BB80"/>
+        <p className="content-graphics__p">Your Expenses</p>
+        <BarChartComponent data={expenseData} color="#EC2C55"/>
+        <p className="content-graphics__p">Expenses by category</p>
+        <RadialBarChartComponent className="radial" data={getCategoriesAmount}/>
       </section>
     </div>
   )
