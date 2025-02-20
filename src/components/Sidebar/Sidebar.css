@@ -12,22 +12,3 @@
     background-color: var(--white);
 }
 
-.aside__ul {
-    width: 100%;
-    list-style-type: none;
-    padding: 0 1.4rem;
-    margin-top: 2rem;
-    li {
-        width: 80%;
-        height: calc(2rem + 1vh);
-        margin-bottom: .8rem;
-        display: flex;
-        align-items: center;
-    }
-}
-
-.aside__link {
-    text-decoration: none;
-    font-size: calc(1rem + .3vw);
-    font-weight: 500;
-}
