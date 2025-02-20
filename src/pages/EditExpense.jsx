@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { getTransactionById, updateTransaction } from '../api/transactions';
 import Modal from '../components/Modal/Modal';
+import './EditExpense.css';
 
 function EditExpense() {
 
@@ -121,7 +122,7 @@ function EditExpense() {
           placeholder={transactionItem.description}
           onChange={(e) => handleChange(e)}></textarea>
         </label>
-        <input type="submit" value="Send" />
+        <input className='button-6' type="submit" value="Send" />
       </form>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
