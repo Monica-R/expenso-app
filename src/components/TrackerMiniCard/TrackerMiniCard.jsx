@@ -1,9 +1,15 @@
 import React from 'react'
 import './TrackerMiniCard.css'
 
-function TrackerMiniCard({info}) {
+function TrackerMiniCard({ info }) {
   return (
-    <><div className='recent-item'>{info}</div></>
+    <>
+      <div className='recent-item'>
+        <span>{ info.amount }</span>
+        <p>Aaaa</p>
+        <span>{ info.date }</span>
+      </div>
+    </>
   )
 }
 
