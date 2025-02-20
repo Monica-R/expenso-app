@@ -1,7 +1,6 @@
 import './App.css'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Sidebar from './components/Sidebar/Sidebar';
 import Home from './pages/Home';
 import AddExpense from './pages/AddExpense';
 import EditExpense from './pages/EditExpense';
@@ -21,7 +20,6 @@ function App() {
       />
       <Header />
       <main className="main">
-        <Sidebar />
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/transactions" element={<Transactions />} />
