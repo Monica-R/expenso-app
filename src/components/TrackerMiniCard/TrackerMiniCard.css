@@ -1,6 +1,32 @@
 .recent-item {
-    width: 100%;
-    font-size: calc(2.4rem - 1vw);
-    padding: 1rem;
-    border-bottom: 1px solid #f1f0f0;
+    width: 80%;
+    font-size: calc(2rem - .8vw);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: .5rem;
+    padding: .5rem 0;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    p {
+        width: 80%;
+        padding-left: 2rem;
+        color: var(--navy-color);
+    }
+    span {
+        display: block;
+        margin: 0 2rem;
+        font-weight: 600;
+    }
+    span:first-of-type {
+        color: var(--navy-color);
+        font-weight: 300;
+    }
+}
+
+.success {
+    color: var(--dark-green-color);
+}
+
+.danger {
+    color: var(--red);
 }

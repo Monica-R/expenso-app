@@ -21,14 +21,14 @@ function RadialBarChartComponent({ data }) {
   };
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="80%" height={400}>
       <PieChart>
         <Pie
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={50} // Hace que sea un gráfico de dona
-          outerRadius={100}
+          innerRadius={80} // Hace que sea un gráfico de dona
+          outerRadius={150}
           fill="#8884d8"
           dataKey="amount"
           nameKey="category"
@@ -39,7 +39,7 @@ function RadialBarChartComponent({ data }) {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend verticalAlign="bottom" height={36} />
+        <Legend verticalAlign="bottom" width="100%" height={70} />
       </PieChart>
     </ResponsiveContainer>
   );
