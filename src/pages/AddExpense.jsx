@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { addTransaction } from '../api/transactions';
 import Modal from '../components/Modal/Modal';
+import './AddExpense.css'
 function AddExpense() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -78,7 +79,6 @@ function AddExpense() {
           </select>
         </label>
         <label htmlFor="type">
-        <label htmlFor="ingreso">
           <input 
             type="radio" 
             name="type" 
@@ -86,14 +86,13 @@ function AddExpense() {
             onChange={(e) => handleChange(e)} 
           /> Income
         </label>
-        <label htmlFor="gasto">
+        <label htmlFor="type">
           <input 
             type="radio" 
             name="type" 
             value="Expense" 
             onChange={(e) => handleChange(e)} 
           /> Expense
-        </label>
         </label>
         <label htmlFor="description">
           <textarea 
@@ -103,7 +102,7 @@ function AddExpense() {
           placeholder="Description"
           onChange={(e) => handleChange(e)}></textarea>
         </label>
-        <input type="submit" value="Send" />
+        <input className='button-6' type="submit" value="Send" />
       </form>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
