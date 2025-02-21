@@ -1,8 +1,12 @@
 import React from 'react'
+import './ErrorPage.css'
 
 function ErrorPage() {
   return (
-    <div>ErrorPage</div>
+    <div className="error">
+      <ion-icon name="warning-outline"></ion-icon>
+      404 ERROR
+    </div>
   )
 }
 

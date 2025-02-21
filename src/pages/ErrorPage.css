@@ -1,0 +1,10 @@
+.error {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10rem + 1vw);
+    font-weight: bold;
+    background-color: var(--medium-blue);
+    color: var(--yellow-light);
+}
