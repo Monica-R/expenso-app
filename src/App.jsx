@@ -1,33 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home';
+import AddExpense from './pages/AddExpense';
+import EditExpense from './pages/EditExpense';
+import TransactionDetails from './pages/TransactionDetails';
+import Transactions from './pages/Transactions';
+import About from './pages/About';
+import ErrorPage from './pages/ErrorPage';
+import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ToastContainer position="top-right" autoClose={2000}
+      />
+      <Header />
+      <main className="main">
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/add" element={<AddExpense />} />
+          <Route path="/transactions/edit/:transactionId" element={<EditExpense />} />
+          <Route path="/transactions/:transactionId/details" element={<TransactionDetails />}/>
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   )
 }

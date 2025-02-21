@@ -1,42 +1,195 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.content-graphics,
+.content-info {
+  height: 100%;
+  background-color: var(--white);
+  border-radius: .2rem;
+  -webkit-border-radius: .2rem;
+  -moz-border-radius: .2rem;
+  -ms-border-radius: .2rem;
+  -o-border-radius: .2rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.content-info {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem;
+}
+
+.credit-card {
+  width: 65%;
+  height: calc(18rem - 6vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-top: .5rem;
+  background: #162057;
+  background: -webkit-linear-gradient(0deg, #162057 0%, #00ff66 100%);
+  background: linear-gradient(0deg, #162057 0%, #00ff66 100%);
+  border-radius: .4rem;
+  -webkit-border-radius: .4rem;
+  -moz-border-radius: .4rem;
+  -ms-border-radius: .4rem;
+  -o-border-radius: .4rem;
+  p {
+    font-size: calc(3rem - .2vw);
+    font-weight: bolder;
+    color: var(--white);
+    padding: 1.6rem;
+    span {
+      font-size: calc(1.6rem + .4vw);
+    }
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.credit-card__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: .2rem;
+}
+
+.credit-card > .credit-card__info span {
+  font-size: calc(2rem - .8vw);
+  font-weight: 400;
+  display: block;
+}
+
+.credit-card > .credit-card__info span:first-child {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.credit-card > .credit-card__info span:last-child {
+  font-size: .8rem;
+}
+
+.content-info__h3 {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: calc(.6rem + .5vw);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--navy-color);
+}
+
+.recent-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.4rem;
+}
+
+.content-graphics {
+  width: 65%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  row-gap: 2rem;
+}
+
+.content-graphics__p,
+.content-graphics__h2 {
+  margin-left: 3rem;
+  padding: .2rem;
+  color: var(--cornsilk);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.content-graphics__h2 {
+  margin-top: 2rem;
+  color: var(--navy-color);
+}
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-left: 4rem;
+  margin-top: 4rem;
+}
+
+.about__h1,
+.about__p {
+  width: 40%;
+  color: var(--cornsilk);
+}
+
+.about__h1 {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.about__p {
+  font-size: calc(1rem + .2vw);
+  color: var(--navy-color);
+}
+
+.author {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: .4rem;
+  color: var(--navy-color);
+  font-size: calc(1.2rem - .1vw);
+  span {
+    display: block;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.author-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--medium-blue);
 }
 
-.card {
-  padding: 2em;
+.author > span:first-of-type,
+.author > span:nth-of-type(2) {
+  font-size: calc(1.8rem - .4vw);
 }
 
-.read-the-docs {
-  color: #888;
+.tech-icons {
+  font-size: calc(4rem + 1vw);
+}
+
+.tech-icons ion-icon[name="logo-css3"] {
+  color: #663399;
+}
+.tech-icons ion-icon[name="logo-javascript"] {
+  color: #f7df1e;
+}
+.tech-icons ion-icon[name="logo-nodejs"] {
+  color: #6cc24a;
+}
+.tech-icons ion-icon[name="logo-react"] {
+  color: #00d8ff;
+}
+.tech-icons ion-icon[name="logo-github"] {
+  color: #333;
 }

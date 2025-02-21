@@ -1,0 +1,43 @@
+.transation-card {
+    background-color: var(--white);
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete-button,
+.update-link,
+.details-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(2rem - .2vw);
+}
+
+
+.details-link {
+    background-color: var(--cornsilk);
+    color: var(--white);
+    padding: 0 .2em;
+}
+
+.update-link {
+    background-color: var(--dark-green-color);
+    color: var(--white);
+    padding: 0 .2em;
+    border-radius: .1em;
+    -webkit-border-radius: .1em;
+    -moz-border-radius: .1em;
+    -ms-border-radius: .1em;
+    -o-border-radius: .1em;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: calc(1.6rem - .4vw);
+    color: var(--navy-color);
+}
