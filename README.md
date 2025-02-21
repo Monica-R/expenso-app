@@ -3,7 +3,7 @@ A simple personal expense mangement
 
 Este es el frontend de Expenso, desarrollado con React y estilizado con CSS. La aplicación permite a los usuarios visualizar, agregar, editar y eliminar transacciones financieras.
 
-Instalación y ejecución
+## Instalación y ejecución
 
 Clonar el repositorio:
 ````
@@ -24,7 +24,7 @@ Iniciar el servidor de desarrollo:
 bun run dev
 ````
 
-Funcionalidades principales
+## Funcionalidades principales
 
 Dashboard con resumen de ingresos y gastos.
 
