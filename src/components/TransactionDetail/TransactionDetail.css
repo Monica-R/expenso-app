@@ -1,0 +1,56 @@
+.transaction-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-item {
+    width: 30%;
+    height: calc(20em - 1vh);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    row-gap: .4em;
+    padding-left: 2em;
+    padding-top: 2em;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 1px;
+}
+
+.transaction-item__h4 {
+    font-size: calc(1rem + .5vw);
+    color: var(--medium-blue);
+}
+
+.transaction-item span {
+    font-weight: 500;
+    font-size: calc(2rem - .6vw);
+    color: var(--navy-color);
+}
+
+.layer > span:last-of-type {
+    width: 8%;
+    padding: .2em;
+    border-radius: .2em;
+    font-size: calc(1rem);
+    background-color: var(--color-one);
+    color: var(--white);
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    -ms-border-radius: .2em;
+    -o-border-radius: .2em;
+}
+
+.layer {
+    display: flex;
+    column-gap: .5em;
+}
+
+.transaction-item .amount-info {
+    font-size: 2.6em;
+}
+
+.back-link {
+    width: 20%;
+    font-size: calc(1.4rem - .4vw);
+}

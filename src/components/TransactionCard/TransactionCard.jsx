@@ -27,16 +27,18 @@ function TransactionCard({transaction, fetchTransactions}) {
 
   return (
     <div className='transation-card'>
-      <span className="date">{ date }</span>
-      <span className='amount'>$ { amount }</span>
+      <div className="transaction-info">
+        <span className="date">{ date }</span>
+        <span className='amount'>$ { amount }</span>
+      </div>
       <div className="options">
         <button className='delete-button' onClick={ () => setIsModalOpen(true) }>
           <ion-icon name="trash-outline"></ion-icon>
         </button>
-        <Link to={`/transactions/edit/${id}`}>
+        <Link className="update-link" to={`/transactions/edit/${id}`}>
           <ion-icon name="create-outline"></ion-icon>
         </Link>
-        <Link to={`/transactions/${id}/details`}>
+        <Link className="details-link" to={`/transactions/${id}/details`}>
           <ion-icon name="eye-outline"></ion-icon>
         </Link>
       </div>
