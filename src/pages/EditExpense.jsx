@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { getTransactionById, updateTransaction } from '../api/transactions';
 import Modal from '../components/Modal/Modal';
@@ -123,6 +123,7 @@ function EditExpense() {
           onChange={(e) => handleChange(e)}></textarea>
         </label>
         <input className='button-6' type="submit" value="Send" />
+        <Link to="/transactions">Back</Link>
       </form>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
